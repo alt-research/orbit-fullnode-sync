@@ -23,7 +23,9 @@ if [ -z $CONTAINER_ID ]; then
     --publish $PORT_RPC:$PORT_RPC \
     --publish $PORT_WS:$PORT_WS \
     $DOCKER_REPO:$DOCKER_TAG \
-      --conf.file=/data/config/nodeConfig.json
+      --conf.file=/data/config/nodeConfig.json \
+      --parent-chain.connection.url=$RPC_URL \
+      --parent-chain.blob-client.beacon-url=$BEACON_URL
 else
   echo "Container for $FN_CONTAINER_NAME exists: $CONTAINER_ID"
   echo "Restarting..."
