@@ -8,6 +8,18 @@ Please refer to https://docs.arbitrum.io/node-running/how-tos/running-an-orbit-n
 ## Preparation
 1. Clone this repository
 2. Obtain the `nodeConfigFullNodeExt.json` file for your chain
+3. Fill up the following values in `variables.sh`:
+   - `RPC_URL`
+      - This is the RPC URL for your settlement chain (e.g., Arbitrum Sepolia)
+      - You can obtain an Arbitrum chain endpoint from the list here: https://docs.arbitrum.io/build-decentralized-apps/reference/node-providers
+      - For other chain endpoints (e.g., Ethereum Sepolia) you can obtain an endpoint from https://chainlist.org/
+   - `BEACON_URL`
+      - This is the consensus client for the L1 chain (e.g., Ethereum Sepolia)
+      - You can obtain an endpoint from the list here: https://docs.arbitrum.io/run-arbitrum-node/l1-ethereum-beacon-chain-rpc-providers
+      - To test if your beacon chain URL is correct, try `curl <Layer 1 beacon chain URL>/eth/v1/beacon/genesis`. You should get a response like the following (this response is for mainnet, other networks will have other values for each field):
+        ```
+        {"data":{"genesis_time":"1606824023","genesis_validators_root":"0x4b363db94e286120d76eb905340fdd4e54bfe9f06bf33ff6cf5ad27f511bfe95","genesis_fork_version":"0x00000000"}}
+        ```
 
 ## Operating the Node
 
