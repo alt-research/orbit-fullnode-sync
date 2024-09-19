@@ -25,7 +25,7 @@ if [ -z $CONTAINER_ID ]; then
     $DOCKER_REPO:$DOCKER_TAG \
       --conf.file=/data/config/nodeConfig.json \
       --parent-chain.connection.url=$RPC_URL \
-      --parent-chain.blob-client.beacon-url=$BEACON_URL
+      --node.dangerous.disable-blob-reader
 else
   echo "Container for $FN_CONTAINER_NAME exists: $CONTAINER_ID"
   echo "Restarting..."
