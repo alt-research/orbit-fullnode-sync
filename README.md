@@ -69,7 +69,7 @@ Or if the syncing has completed:
 
 #### Check After Syncing
 ```sh
-curl --location 'localhost:8545' \
+curl --location 'localhost:8547' \
 --header 'Content-Type: application/json' \
 --data '{
   "jsonrpc": "2.0",
@@ -91,3 +91,21 @@ This should return something like:
 ./stop.sh
 ```
 Note that stopping the node will not remove the `persistence` folder.
+
+### Known Issue
+
+#### Unable to find validator machine directory for the on-chain WASM module root
+
+Github Issue link: https://github.com/OffchainLabs/nitro/issues/2567.
+
+Solution: Add the `--validation.wasm.enable-wasmroots-check=false` to the argument of `docker run command` in the [start.sh](./start.sh). For example:
+
+```sh
+  docker run \
+    ...
+      --conf.file=/data/config/nodeConfig.json \
+      --parent-chain.connection.url=$RPC_URL \
+      --node.dangerous.disable-blob-reader \
+      --validation.wasm.enable-wasmroots-check=false
+```
+
