@@ -108,4 +108,8 @@ Solution: Add the `--validation.wasm.enable-wasmroots-check=false` to the argume
       --node.dangerous.disable-blob-reader \
       --validation.wasm.enable-wasmroots-check=false
 ```
+More information about this:
 
+- `--validation.wasm.allowed-wasm-module-roots strings`: list of WASM module roots or machine base paths to match against on-chain WasmModuleRoot
+- `--validation.wasm.enable-wasmroots-check`: enable check for compatibility of on-chain WASM module root with node (default true)
+- `--validation.wasm.root-path string`: path to machine folders, each containing wasm files (machine.wavm.br, replay.wasm)
