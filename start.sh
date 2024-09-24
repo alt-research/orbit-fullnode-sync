@@ -25,7 +25,8 @@ if [ -z $CONTAINER_ID ]; then
     $DOCKER_REPO:$DOCKER_TAG \
       --conf.file=/data/config/nodeConfig.json \
       --parent-chain.connection.url=$RPC_URL \
-      --node.dangerous.disable-blob-reader
+      --node.dangerous.disable-blob-reader \
+      --validation.wasm.enable-wasmroots-check=false
 else
   echo "Container for $FN_CONTAINER_NAME exists: $CONTAINER_ID"
   echo "Restarting..."

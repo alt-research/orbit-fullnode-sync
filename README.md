@@ -69,7 +69,7 @@ Or if the syncing has completed:
 
 #### Check After Syncing
 ```sh
-curl --location 'localhost:8545' \
+curl --location 'localhost:8547' \
 --header 'Content-Type: application/json' \
 --data '{
   "jsonrpc": "2.0",
