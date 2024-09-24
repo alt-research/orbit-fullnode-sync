@@ -91,25 +91,3 @@ This should return something like:
 ./stop.sh
 ```
 Note that stopping the node will not remove the `persistence` folder.
-
-### Known Issue
-
-#### Unable to find validator machine directory for the on-chain WASM module root
-
-Github Issue link: https://github.com/OffchainLabs/nitro/issues/2567.
-
-Solution: Add the `--validation.wasm.enable-wasmroots-check=false` to the argument of `docker run command` in the [start.sh](./start.sh). For example:
-
-```sh
-  docker run \
-    ...
-      --conf.file=/data/config/nodeConfig.json \
-      --parent-chain.connection.url=$RPC_URL \
-      --node.dangerous.disable-blob-reader \
-      --validation.wasm.enable-wasmroots-check=false
-```
-More information about this:
-
-- `--validation.wasm.allowed-wasm-module-roots strings`: list of WASM module roots or machine base paths to match against on-chain WasmModuleRoot
-- `--validation.wasm.enable-wasmroots-check`: enable check for compatibility of on-chain WASM module root with node (default true)
-- `--validation.wasm.root-path string`: path to machine folders, each containing wasm files (machine.wavm.br, replay.wasm)
