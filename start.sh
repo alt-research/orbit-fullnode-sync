@@ -17,6 +17,7 @@ if [ -z $CONTAINER_ID ]; then
     --detach \
     --restart always \
     --name $FN_CONTAINER_NAME \
+    --user $(id -u):$(id -g) \
     --entrypoint /usr/local/bin/nitro \
     --volume $(pwd)/$PERSISTENCE:/data \
     --volume $(pwd)/nodeConfigFullNodeExt.json:/data/config/nodeConfig.json \
