@@ -1,7 +1,7 @@
 set -e
 FN_CONTAINER_NAME=orbit-full-node
 DOCKER_REPO=offchainlabs/nitro-node
-DOCKER_TAG=v3.1.2-309340a
+DOCKER_TAG=v3.3.2-9d70997
 PORT_RPC=8547
 PORT_WS=8548
 PERSISTENCE=persistence
