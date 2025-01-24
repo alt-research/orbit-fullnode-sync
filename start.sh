@@ -27,7 +27,8 @@ if [ -z $CONTAINER_ID ]; then
       --conf.file=/data/config/nodeConfig.json \
       --parent-chain.connection.url=$RPC_URL \
       --node.dangerous.disable-blob-reader \
-      --validation.wasm.enable-wasmroots-check=false
+      --validation.wasm.enable-wasmroots-check=false \
+      --node.staker.log-query-batch-size=9995
 else
   echo "Container for $FN_CONTAINER_NAME exists: $CONTAINER_ID"
   echo "Restarting..."
