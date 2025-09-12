@@ -1,18 +1,27 @@
 # Orbit Fullnode Synchronization Guide
 
-A simple Docker script for launching full node for Orbit chains.
+A simple Docker script for launching fullnode for Orbit chains.
 
 ## Recommended Hardware
 Please refer to https://docs.arbitrum.io/node-running/how-tos/running-an-orbit-node#prerequisites
 
 ## Preparation
+
+> [!NOTE]
+  > For steps 2 and 3, please contact AltLayer team directly for the location of the latest files for your chain.
+
 1. Clone this repository
-2. Obtain the `nodeConfigFullNodeExt.json` file for your chain
-3. Fill up the following values in `variables.sh`:
-   - `RPC_URL`
-      - This is the RPC URL for your settlement chain (e.g., Arbitrum Sepolia)
-      - You can obtain an Arbitrum chain endpoint from the list here: https://docs.arbitrum.io/build-decentralized-apps/reference/node-providers
-      - For other chain endpoints (e.g., Ethereum Sepolia) you can obtain an endpoint from https://chainlist.org/
+2. Obtain the `nodeConfigFullNodeExt.json` file for your chain and place in your clone directory
+3. Obtain the latest available snapshot for your chain and extract into your clone directory
+   - Your clone directory should now contain a `persistence` folder, with all chain data stored in `persistence/<chain name>`
+4. Fill up `RPC_URL` in `variables.sh`
+   - This is the RPC URL for your settlement chain (e.g., Arbitrum Sepolia)
+   - You can consider publicly available endpoints (e.g., [here](https://docs.arbitrum.io/build-decentralized-apps/reference/node-providers)), but it's recommended to source one with higher rate limits to avoid any issues
+5. If necessary, customize the other parameters in `variables.sh`
+   - `DOCKER_TAG`: The latest supported version by your Orbit chain
+   - `PORT_RPC`: HTTP-RPC server listening port
+   - `PORT_WS`: WS-RPC server listening port
+   - `EXTRA_OPTS`: Any additional nitro parameters
 
 ## Operating the Node
 
@@ -91,3 +100,7 @@ This should return something like:
 ./stop.sh
 ```
 Note that stopping the node will not remove the `persistence` folder.
+
+## References
+- https://docs.arbitrum.io/run-arbitrum-node/run-full-node
+- https://github.com/OffchainLabs/nitro
