@@ -12,7 +12,7 @@ Please refer to https://docs.arbitrum.io/node-running/how-tos/running-an-orbit-n
 
 1. Clone this repository
 2. Obtain the `nodeConfigFullNodeExt.json` file for your chain and place in your clone directory
-3. Obtain the latest available snapshot for your chain and extract into your clone directory
+3. If available, extract the latest snapshot of the chain into your clone directory
    - Your clone directory should now contain a `persistence` folder, with all chain data stored in `persistence/<chain name>`
 4. Fill up `RPC_URL` in `variables.sh`
    - This is the RPC URL for your settlement chain (e.g., Arbitrum Sepolia)
