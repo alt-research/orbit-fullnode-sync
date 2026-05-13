@@ -1,10 +1,11 @@
 set -e
 FN_CONTAINER_NAME=orbit-full-node
 DOCKER_REPO=offchainlabs/nitro-node
-DOCKER_TAG=v3.9.5-66e42c4
+DOCKER_TAG=v3.9.9-6b0af88-stripped
 PORT_RPC=8547
 PORT_WS=8548
 PERSISTENCE=persistence
 RPC_URL=
+ARCHIVE_ENABLED=false
 EXTRA_OPTS="--validation.wasm.allowed-wasm-module-roots=/home/user/nitro-legacy/machines --validation.wasm.root-path=/home/user/nitro-legacy/machines"
 set +e
