@@ -21,6 +21,7 @@ Please refer to https://docs.arbitrum.io/node-running/how-tos/running-an-orbit-n
    - `DOCKER_TAG`: The latest supported version by your Orbit chain
    - `PORT_RPC`: HTTP-RPC server listening port
    - `PORT_WS`: WS-RPC server listening port
+   - `ARCHIVE_ENABLED`: If true, will retain past block states
    - `EXTRA_OPTS`: Any additional nitro parameters
 
 ## Operating the Node

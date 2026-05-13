@@ -30,6 +30,7 @@ if [ -z $CONTAINER_ID ]; then
       --validation.wasm.enable-wasmroots-check=false \
       --node.staker.log-query-batch-size=9995 \
       --ensure-rollup-deployment=false \
+      --execution.caching.archive=$ARCHIVE_ENABLED \
       $EXTRA_OPTS
 else
   echo "Container for $FN_CONTAINER_NAME exists: $CONTAINER_ID"
